@@ -6,13 +6,33 @@ and solves for the secret constant 'c' of a polynomial using the matrix method.
 
 ## How it works?
 
-- Reads input JSON file (default: input.json).
-- For each root:
+1 Reads input JSON file (default: input.json).
+2 For each root:
   - The key is the x-value.
   - The y-value is encoded in a base which can be 2, 4, 10, etc.
   - Decodes the y-value into decimal number.
-- Using the decoded points, it solves the polynomial coefficients assuming a quadratic polynomial (degree 2).
-- Uses the matrix method with Gaussian elimination to solve the system of equations.
-- Tries all combinations of k (minimum points needed) roots out of n.
-- Prints the secret constant c from each combination and checks if all combinations agree.
+3 Using the decoded points, it solves the polynomial coefficients assuming a quadratic polynomial (degree 2).
+4 Uses the matrix method with Gaussian elimination to solve the system of equations.
+  Matrix Method
+We set up linear equations for the quadratic:
+f(x)=ax^2+bx+c
+
+
+For (1,4): 
+
+a(1)^2+b(1)+c=4
+
+For (2,7): 
+a(2)^2+b(2)+c=7
+
+For (3,12): 
+
+a(3)^2+b(3)+c=12
+
+Write as a matrix equation:
+111    a  =  4
+421    b  =  7
+931    c   = 12
+  
+ solving get c=3
 
